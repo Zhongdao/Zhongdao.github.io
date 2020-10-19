@@ -1,7 +1,7 @@
 import os
 import argparse
 import random
-
+#coding=utf-8
 def gen_html(data_dirs, out_dir, scale):
   groups = [os.path.basename(o) for o in data_dirs]
   out_path = os.path.join(out_dir, 'index.html')
@@ -129,8 +129,8 @@ def gen_html(data_dirs, out_dir, scale):
   lines.append('<div class="slideshow-container">')
 
   lines.append('<p>')
-  lines.append('Text1</p>')
-  lines.append('<p>Text2</p>')
+  lines.append('User study for Video Object Removal</p>')
+  lines.append('<p>Please rank the videos in terms of video object removal quality, then drag the videos to Top 1/2/3/4 slots. Click the arrows in the left/right side to  the previous/next video. When you finish all the videos, please click the <b>Save Results</b> button and save the results as a text file, then send it to <b>wcd17@mails.tsinghua.edu.cn</b> or <b>WeChat:13051902595</b> </p>')
   
   data_dir = data_dirs[0]
   items = [o for o in os.listdir(data_dir)]
@@ -138,7 +138,7 @@ def gen_html(data_dirs, out_dir, scale):
   items.sort()
   divin_id=0
   div_id=0
-  for item in items:
+  for iii, item in enumerate(items):
     print("item:", item)
     rawname, ext = os.path.splitext(item)
     if ext != '.m4a':
@@ -146,6 +146,19 @@ def gen_html(data_dirs, out_dir, scale):
     else:
       lines.append('<div class="mySlides fade">')
 
+    # show GT
+    lines.append('<div class="row">')
+    gt_name = 'gt/' + item
+
+    lines.append('<div class="column">')
+    td1 = '<video autoplay muted draggable="false" ondragstart="drag(event)" id="{}" style="width:100%" controls loop>'.format(gt_name)
+    td2 = '<source src="{}" type="video/mp4">'.format(gt_name)
+    lines.append(td1)
+    lines.append(td2)
+    lines.append('</video>')
+    lines.append('<div class="text">Before Removal</div>')
+    lines.append('</div>')
+    lines.append('</div>')
 
     gourps = random.shuffle(groups)
 
@@ -170,16 +183,16 @@ def gen_html(data_dirs, out_dir, scale):
     for _, g in enumerate(groups): 
       if _ % 2 == 0:
         lines.append('<div class="row">')
-      div_id += 1
       lines.append('<div class="column">')
       td1 = '<div class="div" id="div{}" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">'.format(div_id)
       lines.append(td1)
       lines.append('<input type="hidden" value="t1"/>')
       lines.append('</div>')
-      lines.append('<div class="text">Top {}</div>'.format(str(div_id)))
+      lines.append('<div class="text">Top {}</div>'.format(str(div_id% len(groups)+ 1)))
       lines.append('</div>')
       if _ % 2 == 1 or _ == len(groups)-1:
         lines.append('</div>')
+      div_id += 1
 
     #g_index=0
     #for _, g in enumerate(groups): 
@@ -195,8 +208,8 @@ def gen_html(data_dirs, out_dir, scale):
     lines.append('</div>')
   
   lines.append('<div class="mySlides fade">')
-  lines.append('<h2>Complete : Thank you for your time! Please submit the results as a text file.</h2>')
-  lines.append('<input type="button" width="400" height="80" align="center" onclick="myFunction()" value="Submit Result">')
+  lines.append('<h2>Complete : Thank you for your time! Please save the results as a text file and e-mail it to <b>wcd17@mails.tsinghua.edu.cn</b> or send it to <b>WeChat 13051902595</b>.</h2>')
+  lines.append('<input type="button" width="400" height="80" align="center" onclick="myFunction()" value="Save Results">')
   lines.append('</div>')
   lines.append('</div>')
 
@@ -279,7 +292,7 @@ def gen_html(data_dirs, out_dir, scale):
   lines.append('function myFunction() {')
   lines.append('  var id;')
   lines.append('  var result = "";')
-  lines.append('  for (id = 1; id <= 39; id++) {')
+  lines.append('  for (id = 0; id < 87 ; id++) {')
   lines.append('    divName = "div" + id')
   lines.append('    var divNode = document.getElementById(divName);')
   lines.append('    var inputNodes = divNode.getElementsByTagName('+'\'input\''+');')

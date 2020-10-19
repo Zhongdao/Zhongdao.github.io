@@ -108,31 +108,29 @@ img {vertical-align: middle;}
 <body>
 <div class="slideshow-container">
 <p>
-Text1</p>
-<p>Text2</p>
+User study for Video Object Removal</p>
+<p>Please rank the videos in terms of video object removal quality, then drag the videos to Top 1/2/3/4 slots. Click the arrows in the left/right side to  the previous/next video. When you finish all the videos, please click the <b>Save Results</b> button and save the results as a text file, then send it to <b>wcd17@mails.tsinghua.edu.cn</b> or <b>WeChat:13051902595</b> </p>
 <div class="mySlides fade">
 <div class="row">
 <div class="column">
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_bear.m4a" style="width:100%" controls loop>
+<source src="gt/davis_bear.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
 <div id="divIn1" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video1" style="width:100%" controls loop>
-<source src="opn/davis_bear.m4a" type="video/mp4">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video1" style="width:100%" controls loop>
+<source src="ours/davis_bear.m4a" type="video/mp4">
 </video>
 </div>
 </div>
 
 <div class="column">
 <div id="divIn2" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video2" style="width:100%" controls loop>
-<source src="ours/davis_bear.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-</div>
-<div class="row">
-<div class="column">
-<div id="divIn3" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video3" style="width:100%" controls loop>
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video2" style="width:100%" controls loop>
 <source src="vinet/davis_bear.m4a" type="video/mp4">
 </video>
 </div>
@@ -141,13 +139,23 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div id="divIn3" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video3" style="width:100%" controls loop>
+<source src="opn/davis_bear.m4a" type="video/mp4">
+</video>
+</div>
+</div>
+
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div0" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
 <div class="text">Top 1</div>
 </div>
 <div class="column">
-<div class="div" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
 <div class="text">Top 2</div>
@@ -155,7 +163,7 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div3" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
 <div class="text">Top 3</div>
@@ -163,6 +171,14 @@ Text1</p>
 </div>
 </div>
 <div class="mySlides fade">
+<div class="row">
+<div class="column">
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_bmx-bumps.m4a" style="width:100%" controls loop>
+<source src="gt/davis_bmx-bumps.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
 <div class="row">
 <div class="column">
 <div id="divIn4" ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -174,17 +190,7 @@ Text1</p>
 
 <div class="column">
 <div id="divIn5" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video5" style="width:100%" controls loop>
-<source src="vinet/davis_bmx-bumps.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-</div>
-<div class="row">
-<div class="column">
-<div id="divIn6" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video6" style="width:100%" controls loop>
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video5" style="width:100%" controls loop>
 <source src="ours/davis_bmx-bumps.m4a" type="video/mp4">
 </video>
 </div>
@@ -193,41 +199,59 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
+<div id="divIn6" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video6" style="width:100%" controls loop>
+<source src="vinet/davis_bmx-bumps.m4a" type="video/mp4">
+</video>
+</div>
+</div>
+
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div3" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+<div class="text">Top 1</div>
+</div>
+<div class="column">
 <div class="div" id="div4" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 4</div>
-</div>
-<div class="column">
-<div class="div" id="div5" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 5</div>
+<div class="text">Top 2</div>
 </div>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div6" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div5" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 6</div>
+<div class="text">Top 3</div>
 </div>
 </div>
 </div>
 <div class="mySlides fade">
 <div class="row">
 <div class="column">
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_bmx-trees.m4a" style="width:100%" controls loop>
+<source src="gt/davis_bmx-trees.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
 <div id="divIn7" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video7" style="width:100%" controls loop>
-<source src="vinet/davis_bmx-trees.m4a" type="video/mp4">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video7" style="width:100%" controls loop>
+<source src="ours/davis_bmx-trees.m4a" type="video/mp4">
 </video>
 </div>
 </div>
 
 <div class="column">
 <div id="divIn8" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video8" style="width:100%" controls loop>
-<source src="ours/davis_bmx-trees.m4a" type="video/mp4">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video8" style="width:100%" controls loop>
+<source src="vinet/davis_bmx-trees.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -245,28 +269,36 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
+<div class="div" id="div6" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+<div class="text">Top 1</div>
+</div>
+<div class="column">
 <div class="div" id="div7" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 7</div>
-</div>
-<div class="column">
-<div class="div" id="div8" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 8</div>
+<div class="text">Top 2</div>
 </div>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div9" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div8" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 9</div>
+<div class="text">Top 3</div>
 </div>
 </div>
 </div>
 <div class="mySlides fade">
+<div class="row">
+<div class="column">
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_breakdance-flare.m4a" style="width:100%" controls loop>
+<source src="gt/davis_breakdance-flare.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
 <div class="row">
 <div class="column">
 <div id="divIn10" ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -297,33 +329,41 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
+<div class="div" id="div9" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+<div class="text">Top 1</div>
+</div>
+<div class="column">
 <div class="div" id="div10" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 10</div>
-</div>
-<div class="column">
-<div class="div" id="div11" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 11</div>
+<div class="text">Top 2</div>
 </div>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div12" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div11" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 12</div>
+<div class="text">Top 3</div>
 </div>
 </div>
 </div>
 <div class="mySlides fade">
 <div class="row">
 <div class="column">
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_breakdance.m4a" style="width:100%" controls loop>
+<source src="gt/davis_breakdance.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
 <div id="divIn13" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video13" style="width:100%" controls loop>
-<source src="opn/davis_breakdance.m4a" type="video/mp4">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video13" style="width:100%" controls loop>
+<source src="vinet/davis_breakdance.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -340,8 +380,8 @@ Text1</p>
 <div class="row">
 <div class="column">
 <div id="divIn15" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video15" style="width:100%" controls loop>
-<source src="vinet/davis_breakdance.m4a" type="video/mp4">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video15" style="width:100%" controls loop>
+<source src="opn/davis_breakdance.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -349,41 +389,49 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
+<div class="div" id="div12" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+<div class="text">Top 1</div>
+</div>
+<div class="column">
 <div class="div" id="div13" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 13</div>
-</div>
-<div class="column">
-<div class="div" id="div14" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 14</div>
+<div class="text">Top 2</div>
 </div>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div15" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div14" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 15</div>
+<div class="text">Top 3</div>
 </div>
 </div>
 </div>
 <div class="mySlides fade">
 <div class="row">
 <div class="column">
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_camel.m4a" style="width:100%" controls loop>
+<source src="gt/davis_camel.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
 <div id="divIn16" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video16" style="width:100%" controls loop>
-<source src="vinet/davis_camel.m4a" type="video/mp4">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video16" style="width:100%" controls loop>
+<source src="opn/davis_camel.m4a" type="video/mp4">
 </video>
 </div>
 </div>
 
 <div class="column">
 <div id="divIn17" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video17" style="width:100%" controls loop>
-<source src="opn/davis_camel.m4a" type="video/mp4">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video17" style="width:100%" controls loop>
+<source src="vinet/davis_camel.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -401,33 +449,41 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
+<div class="div" id="div15" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+<div class="text">Top 1</div>
+</div>
+<div class="column">
 <div class="div" id="div16" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 16</div>
-</div>
-<div class="column">
-<div class="div" id="div17" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 17</div>
+<div class="text">Top 2</div>
 </div>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div18" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div17" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 18</div>
+<div class="text">Top 3</div>
 </div>
 </div>
 </div>
 <div class="mySlides fade">
 <div class="row">
 <div class="column">
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_dance-jump.m4a" style="width:100%" controls loop>
+<source src="gt/davis_dance-jump.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
 <div id="divIn19" ondrop="drop(event)" ondragover="allowDrop(event)">
 <video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video19" style="width:100%" controls loop>
-<source src="ours/davis_car-shadow.m4a" type="video/mp4">
+<source src="ours/davis_dance-jump.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -435,7 +491,7 @@ Text1</p>
 <div class="column">
 <div id="divIn20" ondrop="drop(event)" ondragover="allowDrop(event)">
 <video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video20" style="width:100%" controls loop>
-<source src="opn/davis_car-shadow.m4a" type="video/mp4">
+<source src="opn/davis_dance-jump.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -445,7 +501,7 @@ Text1</p>
 <div class="column">
 <div id="divIn21" ondrop="drop(event)" ondragover="allowDrop(event)">
 <video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video21" style="width:100%" controls loop>
-<source src="vinet/davis_car-shadow.m4a" type="video/mp4">
+<source src="vinet/davis_dance-jump.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -453,33 +509,41 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
+<div class="div" id="div18" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+<div class="text">Top 1</div>
+</div>
+<div class="column">
 <div class="div" id="div19" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 19</div>
-</div>
-<div class="column">
-<div class="div" id="div20" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 20</div>
+<div class="text">Top 2</div>
 </div>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div21" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div20" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 21</div>
+<div class="text">Top 3</div>
 </div>
 </div>
 </div>
 <div class="mySlides fade">
 <div class="row">
 <div class="column">
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_dance-twirl.m4a" style="width:100%" controls loop>
+<source src="gt/davis_dance-twirl.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
 <div id="divIn22" ondrop="drop(event)" ondragover="allowDrop(event)">
 <video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video22" style="width:100%" controls loop>
-<source src="opn/davis_dance-jump.m4a" type="video/mp4">
+<source src="opn/davis_dance-twirl.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -487,7 +551,7 @@ Text1</p>
 <div class="column">
 <div id="divIn23" ondrop="drop(event)" ondragover="allowDrop(event)">
 <video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video23" style="width:100%" controls loop>
-<source src="ours/davis_dance-jump.m4a" type="video/mp4">
+<source src="ours/davis_dance-twirl.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -497,58 +561,6 @@ Text1</p>
 <div class="column">
 <div id="divIn24" ondrop="drop(event)" ondragover="allowDrop(event)">
 <video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video24" style="width:100%" controls loop>
-<source src="vinet/davis_dance-jump.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-</div>
-<div class="row">
-<div class="column">
-<div class="div" id="div22" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 22</div>
-</div>
-<div class="column">
-<div class="div" id="div23" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 23</div>
-</div>
-</div>
-<div class="row">
-<div class="column">
-<div class="div" id="div24" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 24</div>
-</div>
-</div>
-</div>
-<div class="mySlides fade">
-<div class="row">
-<div class="column">
-<div id="divIn25" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video25" style="width:100%" controls loop>
-<source src="opn/davis_dance-twirl.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-<div class="column">
-<div id="divIn26" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video26" style="width:100%" controls loop>
-<source src="ours/davis_dance-twirl.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-</div>
-<div class="row">
-<div class="column">
-<div id="divIn27" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video27" style="width:100%" controls loop>
 <source src="vinet/davis_dance-twirl.m4a" type="video/mp4">
 </video>
 </div>
@@ -557,40 +569,48 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div25" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div21" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 25</div>
+<div class="text">Top 1</div>
 </div>
 <div class="column">
-<div class="div" id="div26" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div22" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 26</div>
+<div class="text">Top 2</div>
 </div>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div27" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div23" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 27</div>
+<div class="text">Top 3</div>
 </div>
 </div>
 </div>
 <div class="mySlides fade">
 <div class="row">
 <div class="column">
-<div id="divIn28" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video28" style="width:100%" controls loop>
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_elephant.m4a" style="width:100%" controls loop>
+<source src="gt/davis_elephant.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div id="divIn25" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video25" style="width:100%" controls loop>
 <source src="vinet/davis_elephant.m4a" type="video/mp4">
 </video>
 </div>
 </div>
 
 <div class="column">
-<div id="divIn29" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video29" style="width:100%" controls loop>
+<div id="divIn26" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video26" style="width:100%" controls loop>
 <source src="ours/davis_elephant.m4a" type="video/mp4">
 </video>
 </div>
@@ -599,8 +619,8 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
-<div id="divIn30" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video30" style="width:100%" controls loop>
+<div id="divIn27" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video27" style="width:100%" controls loop>
 <source src="opn/davis_elephant.m4a" type="video/mp4">
 </video>
 </div>
@@ -609,50 +629,48 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div28" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div24" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 28</div>
+<div class="text">Top 1</div>
 </div>
 <div class="column">
-<div class="div" id="div29" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div25" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 29</div>
+<div class="text">Top 2</div>
 </div>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div30" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div26" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 30</div>
+<div class="text">Top 3</div>
 </div>
 </div>
 </div>
 <div class="mySlides fade">
 <div class="row">
 <div class="column">
-<div id="divIn31" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video31" style="width:100%" controls loop>
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_flamingo.m4a" style="width:100%" controls loop>
+<source src="gt/davis_flamingo.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div id="divIn28" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video28" style="width:100%" controls loop>
 <source src="vinet/davis_flamingo.m4a" type="video/mp4">
 </video>
 </div>
 </div>
 
 <div class="column">
-<div id="divIn32" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video32" style="width:100%" controls loop>
-<source src="ours/davis_flamingo.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-</div>
-<div class="row">
-<div class="column">
-<div id="divIn33" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video33" style="width:100%" controls loop>
+<div id="divIn29" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video29" style="width:100%" controls loop>
 <source src="opn/davis_flamingo.m4a" type="video/mp4">
 </video>
 </div>
@@ -661,41 +679,119 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div31" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div id="divIn30" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video30" style="width:100%" controls loop>
+<source src="ours/davis_flamingo.m4a" type="video/mp4">
+</video>
+</div>
+</div>
+
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div27" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 31</div>
+<div class="text">Top 1</div>
 </div>
 <div class="column">
-<div class="div" id="div32" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div28" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 32</div>
+<div class="text">Top 2</div>
 </div>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div33" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div29" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 33</div>
+<div class="text">Top 3</div>
 </div>
 </div>
 </div>
 <div class="mySlides fade">
 <div class="row">
 <div class="column">
-<div id="divIn34" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video34" style="width:100%" controls loop>
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_goat.m4a" style="width:100%" controls loop>
+<source src="gt/davis_goat.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div id="divIn31" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video31" style="width:100%" controls loop>
+<source src="vinet/davis_goat.m4a" type="video/mp4">
+</video>
+</div>
+</div>
+
+<div class="column">
+<div id="divIn32" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video32" style="width:100%" controls loop>
 <source src="opn/davis_goat.m4a" type="video/mp4">
+</video>
+</div>
+</div>
+
+</div>
+<div class="row">
+<div class="column">
+<div id="divIn33" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video33" style="width:100%" controls loop>
+<source src="ours/davis_goat.m4a" type="video/mp4">
+</video>
+</div>
+</div>
+
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div30" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+<div class="text">Top 1</div>
+</div>
+<div class="column">
+<div class="div" id="div31" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+<div class="text">Top 2</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div32" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+<div class="text">Top 3</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_hike.m4a" style="width:100%" controls loop>
+<source src="gt/davis_hike.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div id="divIn34" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video34" style="width:100%" controls loop>
+<source src="vinet/davis_hike.m4a" type="video/mp4">
 </video>
 </div>
 </div>
 
 <div class="column">
 <div id="divIn35" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video35" style="width:100%" controls loop>
-<source src="vinet/davis_goat.m4a" type="video/mp4">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video35" style="width:100%" controls loop>
+<source src="opn/davis_hike.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -705,7 +801,7 @@ Text1</p>
 <div class="column">
 <div id="divIn36" ondrop="drop(event)" ondragover="allowDrop(event)">
 <video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video36" style="width:100%" controls loop>
-<source src="ours/davis_goat.m4a" type="video/mp4">
+<source src="ours/davis_hike.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -713,33 +809,41 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
+<div class="div" id="div33" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+<div class="text">Top 1</div>
+</div>
+<div class="column">
 <div class="div" id="div34" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 34</div>
-</div>
-<div class="column">
-<div class="div" id="div35" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 35</div>
+<div class="text">Top 2</div>
 </div>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div36" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div35" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 36</div>
+<div class="text">Top 3</div>
 </div>
 </div>
 </div>
 <div class="mySlides fade">
 <div class="row">
 <div class="column">
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_horsejump-high.m4a" style="width:100%" controls loop>
+<source src="gt/davis_horsejump-high.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
 <div id="divIn37" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video37" style="width:100%" controls loop>
-<source src="ours/davis_hike.m4a" type="video/mp4">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video37" style="width:100%" controls loop>
+<source src="vinet/davis_horsejump-high.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -747,58 +851,6 @@ Text1</p>
 <div class="column">
 <div id="divIn38" ondrop="drop(event)" ondragover="allowDrop(event)">
 <video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video38" style="width:100%" controls loop>
-<source src="opn/davis_hike.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-</div>
-<div class="row">
-<div class="column">
-<div id="divIn39" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video39" style="width:100%" controls loop>
-<source src="vinet/davis_hike.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-</div>
-<div class="row">
-<div class="column">
-<div class="div" id="div37" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 37</div>
-</div>
-<div class="column">
-<div class="div" id="div38" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 38</div>
-</div>
-</div>
-<div class="row">
-<div class="column">
-<div class="div" id="div39" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 39</div>
-</div>
-</div>
-</div>
-<div class="mySlides fade">
-<div class="row">
-<div class="column">
-<div id="divIn40" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video40" style="width:100%" controls loop>
-<source src="vinet/davis_horsejump-high.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-<div class="column">
-<div id="divIn41" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video41" style="width:100%" controls loop>
 <source src="opn/davis_horsejump-high.m4a" type="video/mp4">
 </video>
 </div>
@@ -807,8 +859,8 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
-<div id="divIn42" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video42" style="width:100%" controls loop>
+<div id="divIn39" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video39" style="width:100%" controls loop>
 <source src="ours/davis_horsejump-high.m4a" type="video/mp4">
 </video>
 </div>
@@ -817,41 +869,49 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div40" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div36" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 40</div>
+<div class="text">Top 1</div>
 </div>
 <div class="column">
-<div class="div" id="div41" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div37" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 41</div>
+<div class="text">Top 2</div>
 </div>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div42" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div38" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 42</div>
+<div class="text">Top 3</div>
 </div>
 </div>
 </div>
 <div class="mySlides fade">
 <div class="row">
 <div class="column">
-<div id="divIn43" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video43" style="width:100%" controls loop>
-<source src="ours/davis_horsejump-low.m4a" type="video/mp4">
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_horsejump-low.m4a" style="width:100%" controls loop>
+<source src="gt/davis_horsejump-low.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div id="divIn40" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video40" style="width:100%" controls loop>
+<source src="opn/davis_horsejump-low.m4a" type="video/mp4">
 </video>
 </div>
 </div>
 
 <div class="column">
-<div id="divIn44" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video44" style="width:100%" controls loop>
-<source src="opn/davis_horsejump-low.m4a" type="video/mp4">
+<div id="divIn41" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video41" style="width:100%" controls loop>
+<source src="ours/davis_horsejump-low.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -859,8 +919,8 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
-<div id="divIn45" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video45" style="width:100%" controls loop>
+<div id="divIn42" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video42" style="width:100%" controls loop>
 <source src="vinet/davis_horsejump-low.m4a" type="video/mp4">
 </video>
 </div>
@@ -869,40 +929,48 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div43" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div39" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 43</div>
+<div class="text">Top 1</div>
 </div>
 <div class="column">
-<div class="div" id="div44" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div40" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 44</div>
+<div class="text">Top 2</div>
 </div>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div45" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div41" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 45</div>
+<div class="text">Top 3</div>
 </div>
 </div>
 </div>
 <div class="mySlides fade">
 <div class="row">
 <div class="column">
-<div id="divIn46" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video46" style="width:100%" controls loop>
-<source src="opn/davis_kite-surf.m4a" type="video/mp4">
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_kite-surf.m4a" style="width:100%" controls loop>
+<source src="gt/davis_kite-surf.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div id="divIn43" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video43" style="width:100%" controls loop>
+<source src="vinet/davis_kite-surf.m4a" type="video/mp4">
 </video>
 </div>
 </div>
 
 <div class="column">
-<div id="divIn47" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video47" style="width:100%" controls loop>
+<div id="divIn44" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video44" style="width:100%" controls loop>
 <source src="ours/davis_kite-surf.m4a" type="video/mp4">
 </video>
 </div>
@@ -911,9 +979,9 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
-<div id="divIn48" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video48" style="width:100%" controls loop>
-<source src="vinet/davis_kite-surf.m4a" type="video/mp4">
+<div id="divIn45" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video45" style="width:100%" controls loop>
+<source src="opn/davis_kite-surf.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -921,102 +989,48 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div46" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div42" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 46</div>
+<div class="text">Top 1</div>
 </div>
 <div class="column">
-<div class="div" id="div47" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div43" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 47</div>
+<div class="text">Top 2</div>
 </div>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div48" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div44" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 48</div>
+<div class="text">Top 3</div>
 </div>
 </div>
 </div>
 <div class="mySlides fade">
 <div class="row">
 <div class="column">
-<div id="divIn49" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video49" style="width:100%" controls loop>
-<source src="ours/davis_kite-walk.m4a" type="video/mp4">
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_motocross-jump.m4a" style="width:100%" controls loop>
+<source src="gt/davis_motocross-jump.m4a" type="video/mp4">
 </video>
-</div>
-</div>
-
-<div class="column">
-<div id="divIn50" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video50" style="width:100%" controls loop>
-<source src="vinet/davis_kite-walk.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-</div>
-<div class="row">
-<div class="column">
-<div id="divIn51" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video51" style="width:100%" controls loop>
-<source src="opn/davis_kite-walk.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-</div>
-<div class="row">
-<div class="column">
-<div class="div" id="div49" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 49</div>
-</div>
-<div class="column">
-<div class="div" id="div50" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 50</div>
+<div class="text">Before Removal</div>
 </div>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div51" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 51</div>
-</div>
-</div>
-</div>
-<div class="mySlides fade">
-<div class="row">
-<div class="column">
-<div id="divIn52" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video52" style="width:100%" controls loop>
-<source src="opn/davis_motocross-jump.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-<div class="column">
-<div id="divIn53" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video53" style="width:100%" controls loop>
+<div id="divIn46" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video46" style="width:100%" controls loop>
 <source src="vinet/davis_motocross-jump.m4a" type="video/mp4">
 </video>
 </div>
 </div>
 
-</div>
-<div class="row">
 <div class="column">
-<div id="divIn54" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video54" style="width:100%" controls loop>
+<div id="divIn47" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video47" style="width:100%" controls loop>
 <source src="ours/davis_motocross-jump.m4a" type="video/mp4">
 </video>
 </div>
@@ -1025,33 +1039,171 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div52" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div id="divIn48" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video48" style="width:100%" controls loop>
+<source src="opn/davis_motocross-jump.m4a" type="video/mp4">
+</video>
+</div>
+</div>
+
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div45" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 52</div>
+<div class="text">Top 1</div>
 </div>
 <div class="column">
-<div class="div" id="div53" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div46" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 53</div>
+<div class="text">Top 2</div>
 </div>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div54" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div47" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 54</div>
+<div class="text">Top 3</div>
 </div>
 </div>
 </div>
 <div class="mySlides fade">
 <div class="row">
 <div class="column">
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_paragliding-launch.m4a" style="width:100%" controls loop>
+<source src="gt/davis_paragliding-launch.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div id="divIn49" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video49" style="width:100%" controls loop>
+<source src="opn/davis_paragliding-launch.m4a" type="video/mp4">
+</video>
+</div>
+</div>
+
+<div class="column">
+<div id="divIn50" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video50" style="width:100%" controls loop>
+<source src="vinet/davis_paragliding-launch.m4a" type="video/mp4">
+</video>
+</div>
+</div>
+
+</div>
+<div class="row">
+<div class="column">
+<div id="divIn51" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video51" style="width:100%" controls loop>
+<source src="ours/davis_paragliding-launch.m4a" type="video/mp4">
+</video>
+</div>
+</div>
+
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div48" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+<div class="text">Top 1</div>
+</div>
+<div class="column">
+<div class="div" id="div49" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+<div class="text">Top 2</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div50" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+<div class="text">Top 3</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_paragliding.m4a" style="width:100%" controls loop>
+<source src="gt/davis_paragliding.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div id="divIn52" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video52" style="width:100%" controls loop>
+<source src="ours/davis_paragliding.m4a" type="video/mp4">
+</video>
+</div>
+</div>
+
+<div class="column">
+<div id="divIn53" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video53" style="width:100%" controls loop>
+<source src="opn/davis_paragliding.m4a" type="video/mp4">
+</video>
+</div>
+</div>
+
+</div>
+<div class="row">
+<div class="column">
+<div id="divIn54" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video54" style="width:100%" controls loop>
+<source src="vinet/davis_paragliding.m4a" type="video/mp4">
+</video>
+</div>
+</div>
+
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div51" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+<div class="text">Top 1</div>
+</div>
+<div class="column">
+<div class="div" id="div52" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+<div class="text">Top 2</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div class="div" id="div53" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+<div class="text">Top 3</div>
+</div>
+</div>
+</div>
+<div class="mySlides fade">
+<div class="row">
+<div class="column">
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_parkour.m4a" style="width:100%" controls loop>
+<source src="gt/davis_parkour.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
 <div id="divIn55" ondrop="drop(event)" ondragover="allowDrop(event)">
 <video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video55" style="width:100%" controls loop>
-<source src="vinet/davis_motorbike.m4a" type="video/mp4">
+<source src="vinet/davis_parkour.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -1059,7 +1211,7 @@ Text1</p>
 <div class="column">
 <div id="divIn56" ondrop="drop(event)" ondragover="allowDrop(event)">
 <video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video56" style="width:100%" controls loop>
-<source src="ours/davis_motorbike.m4a" type="video/mp4">
+<source src="ours/davis_parkour.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -1069,7 +1221,7 @@ Text1</p>
 <div class="column">
 <div id="divIn57" ondrop="drop(event)" ondragover="allowDrop(event)">
 <video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video57" style="width:100%" controls loop>
-<source src="opn/davis_motorbike.m4a" type="video/mp4">
+<source src="opn/davis_parkour.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -1077,33 +1229,41 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
+<div class="div" id="div54" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+<div class="text">Top 1</div>
+</div>
+<div class="column">
 <div class="div" id="div55" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 55</div>
-</div>
-<div class="column">
-<div class="div" id="div56" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 56</div>
+<div class="text">Top 2</div>
 </div>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div57" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div56" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 57</div>
+<div class="text">Top 3</div>
 </div>
 </div>
 </div>
 <div class="mySlides fade">
 <div class="row">
 <div class="column">
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_rhino.m4a" style="width:100%" controls loop>
+<source src="gt/davis_rhino.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
 <div id="divIn58" ondrop="drop(event)" ondragover="allowDrop(event)">
 <video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video58" style="width:100%" controls loop>
-<source src="vinet/davis_paragliding-launch.m4a" type="video/mp4">
+<source src="vinet/davis_rhino.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -1111,7 +1271,7 @@ Text1</p>
 <div class="column">
 <div id="divIn59" ondrop="drop(event)" ondragover="allowDrop(event)">
 <video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video59" style="width:100%" controls loop>
-<source src="ours/davis_paragliding-launch.m4a" type="video/mp4">
+<source src="ours/davis_rhino.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -1121,7 +1281,7 @@ Text1</p>
 <div class="column">
 <div id="divIn60" ondrop="drop(event)" ondragover="allowDrop(event)">
 <video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video60" style="width:100%" controls loop>
-<source src="opn/davis_paragliding-launch.m4a" type="video/mp4">
+<source src="opn/davis_rhino.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -1129,41 +1289,49 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
+<div class="div" id="div57" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+<div class="text">Top 1</div>
+</div>
+<div class="column">
 <div class="div" id="div58" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 58</div>
-</div>
-<div class="column">
-<div class="div" id="div59" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 59</div>
+<div class="text">Top 2</div>
 </div>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div60" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div59" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 60</div>
+<div class="text">Top 3</div>
 </div>
 </div>
 </div>
 <div class="mySlides fade">
 <div class="row">
 <div class="column">
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_rollerblade.m4a" style="width:100%" controls loop>
+<source src="gt/davis_rollerblade.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
 <div id="divIn61" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video61" style="width:100%" controls loop>
-<source src="ours/davis_paragliding.m4a" type="video/mp4">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video61" style="width:100%" controls loop>
+<source src="opn/davis_rollerblade.m4a" type="video/mp4">
 </video>
 </div>
 </div>
 
 <div class="column">
 <div id="divIn62" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video62" style="width:100%" controls loop>
-<source src="vinet/davis_paragliding.m4a" type="video/mp4">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video62" style="width:100%" controls loop>
+<source src="ours/davis_rollerblade.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -1172,8 +1340,8 @@ Text1</p>
 <div class="row">
 <div class="column">
 <div id="divIn63" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video63" style="width:100%" controls loop>
-<source src="opn/davis_paragliding.m4a" type="video/mp4">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video63" style="width:100%" controls loop>
+<source src="vinet/davis_rollerblade.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -1181,33 +1349,41 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
+<div class="div" id="div60" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+<div class="text">Top 1</div>
+</div>
+<div class="column">
 <div class="div" id="div61" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 61</div>
-</div>
-<div class="column">
-<div class="div" id="div62" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 62</div>
+<div class="text">Top 2</div>
 </div>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div63" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div62" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 63</div>
+<div class="text">Top 3</div>
 </div>
 </div>
 </div>
 <div class="mySlides fade">
 <div class="row">
 <div class="column">
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_stroller.m4a" style="width:100%" controls loop>
+<source src="gt/davis_stroller.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
 <div id="divIn64" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video64" style="width:100%" controls loop>
-<source src="opn/davis_parkour.m4a" type="video/mp4">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video64" style="width:100%" controls loop>
+<source src="ours/davis_stroller.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -1215,7 +1391,7 @@ Text1</p>
 <div class="column">
 <div id="divIn65" ondrop="drop(event)" ondragover="allowDrop(event)">
 <video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video65" style="width:100%" controls loop>
-<source src="vinet/davis_parkour.m4a" type="video/mp4">
+<source src="vinet/davis_stroller.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -1224,8 +1400,8 @@ Text1</p>
 <div class="row">
 <div class="column">
 <div id="divIn66" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video66" style="width:100%" controls loop>
-<source src="ours/davis_parkour.m4a" type="video/mp4">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video66" style="width:100%" controls loop>
+<source src="opn/davis_stroller.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -1233,33 +1409,41 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
+<div class="div" id="div63" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<input type="hidden" value="t1"/>
+</div>
+<div class="text">Top 1</div>
+</div>
+<div class="column">
 <div class="div" id="div64" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 64</div>
-</div>
-<div class="column">
-<div class="div" id="div65" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 65</div>
+<div class="text">Top 2</div>
 </div>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div66" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div65" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 66</div>
+<div class="text">Top 3</div>
 </div>
 </div>
 </div>
 <div class="mySlides fade">
 <div class="row">
 <div class="column">
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_swing.m4a" style="width:100%" controls loop>
+<source src="gt/davis_swing.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
 <div id="divIn67" ondrop="drop(event)" ondragover="allowDrop(event)">
 <video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video67" style="width:100%" controls loop>
-<source src="vinet/davis_rhino.m4a" type="video/mp4">
+<source src="vinet/davis_swing.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -1267,7 +1451,7 @@ Text1</p>
 <div class="column">
 <div id="divIn68" ondrop="drop(event)" ondragover="allowDrop(event)">
 <video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video68" style="width:100%" controls loop>
-<source src="ours/davis_rhino.m4a" type="video/mp4">
+<source src="ours/davis_swing.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -1277,214 +1461,6 @@ Text1</p>
 <div class="column">
 <div id="divIn69" ondrop="drop(event)" ondragover="allowDrop(event)">
 <video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video69" style="width:100%" controls loop>
-<source src="opn/davis_rhino.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-</div>
-<div class="row">
-<div class="column">
-<div class="div" id="div67" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 67</div>
-</div>
-<div class="column">
-<div class="div" id="div68" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 68</div>
-</div>
-</div>
-<div class="row">
-<div class="column">
-<div class="div" id="div69" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 69</div>
-</div>
-</div>
-</div>
-<div class="mySlides fade">
-<div class="row">
-<div class="column">
-<div id="divIn70" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video70" style="width:100%" controls loop>
-<source src="opn/davis_rollerblade.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-<div class="column">
-<div id="divIn71" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video71" style="width:100%" controls loop>
-<source src="ours/davis_rollerblade.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-</div>
-<div class="row">
-<div class="column">
-<div id="divIn72" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video72" style="width:100%" controls loop>
-<source src="vinet/davis_rollerblade.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-</div>
-<div class="row">
-<div class="column">
-<div class="div" id="div70" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 70</div>
-</div>
-<div class="column">
-<div class="div" id="div71" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 71</div>
-</div>
-</div>
-<div class="row">
-<div class="column">
-<div class="div" id="div72" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 72</div>
-</div>
-</div>
-</div>
-<div class="mySlides fade">
-<div class="row">
-<div class="column">
-<div id="divIn73" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video73" style="width:100%" controls loop>
-<source src="opn/davis_stroller.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-<div class="column">
-<div id="divIn74" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video74" style="width:100%" controls loop>
-<source src="vinet/davis_stroller.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-</div>
-<div class="row">
-<div class="column">
-<div id="divIn75" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video75" style="width:100%" controls loop>
-<source src="ours/davis_stroller.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-</div>
-<div class="row">
-<div class="column">
-<div class="div" id="div73" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 73</div>
-</div>
-<div class="column">
-<div class="div" id="div74" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 74</div>
-</div>
-</div>
-<div class="row">
-<div class="column">
-<div class="div" id="div75" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 75</div>
-</div>
-</div>
-</div>
-<div class="mySlides fade">
-<div class="row">
-<div class="column">
-<div id="divIn76" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video76" style="width:100%" controls loop>
-<source src="ours/davis_surf.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-<div class="column">
-<div id="divIn77" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video77" style="width:100%" controls loop>
-<source src="opn/davis_surf.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-</div>
-<div class="row">
-<div class="column">
-<div id="divIn78" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video78" style="width:100%" controls loop>
-<source src="vinet/davis_surf.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-</div>
-<div class="row">
-<div class="column">
-<div class="div" id="div76" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 76</div>
-</div>
-<div class="column">
-<div class="div" id="div77" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 77</div>
-</div>
-</div>
-<div class="row">
-<div class="column">
-<div class="div" id="div78" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
-<input type="hidden" value="t1"/>
-</div>
-<div class="text">Top 78</div>
-</div>
-</div>
-</div>
-<div class="mySlides fade">
-<div class="row">
-<div class="column">
-<div id="divIn79" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video79" style="width:100%" controls loop>
-<source src="ours/davis_swing.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-<div class="column">
-<div id="divIn80" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video80" style="width:100%" controls loop>
-<source src="vinet/davis_swing.m4a" type="video/mp4">
-</video>
-</div>
-</div>
-
-</div>
-<div class="row">
-<div class="column">
-<div id="divIn81" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video81" style="width:100%" controls loop>
 <source src="opn/davis_swing.m4a" type="video/mp4">
 </video>
 </div>
@@ -1493,41 +1469,49 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div79" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div66" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 79</div>
+<div class="text">Top 1</div>
 </div>
 <div class="column">
-<div class="div" id="div80" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div67" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 80</div>
+<div class="text">Top 2</div>
 </div>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div81" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div68" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 81</div>
+<div class="text">Top 3</div>
 </div>
 </div>
 </div>
 <div class="mySlides fade">
 <div class="row">
 <div class="column">
-<div id="divIn82" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video82" style="width:100%" controls loop>
-<source src="vinet/davis_tennis.m4a" type="video/mp4">
+<video autoplay muted draggable="false" ondragstart="drag(event)" id="gt/davis_tennis.m4a" style="width:100%" controls loop>
+<source src="gt/davis_tennis.m4a" type="video/mp4">
+</video>
+<div class="text">Before Removal</div>
+</div>
+</div>
+<div class="row">
+<div class="column">
+<div id="divIn70" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video70" style="width:100%" controls loop>
+<source src="ours/davis_tennis.m4a" type="video/mp4">
 </video>
 </div>
 </div>
 
 <div class="column">
-<div id="divIn83" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="ours/video83" style="width:100%" controls loop>
-<source src="ours/davis_tennis.m4a" type="video/mp4">
+<div id="divIn71" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="vinet/video71" style="width:100%" controls loop>
+<source src="vinet/davis_tennis.m4a" type="video/mp4">
 </video>
 </div>
 </div>
@@ -1535,8 +1519,8 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
-<div id="divIn84" ondrop="drop(event)" ondragover="allowDrop(event)">
-<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video84" style="width:100%" controls loop>
+<div id="divIn72" ondrop="drop(event)" ondragover="allowDrop(event)">
+<video autoplay muted draggable="true" ondragstart="drag(event)" id="opn/video72" style="width:100%" controls loop>
 <source src="opn/davis_tennis.m4a" type="video/mp4">
 </video>
 </div>
@@ -1545,30 +1529,30 @@ Text1</p>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div82" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div69" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 82</div>
+<div class="text">Top 1</div>
 </div>
 <div class="column">
-<div class="div" id="div83" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div70" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 83</div>
+<div class="text">Top 2</div>
 </div>
 </div>
 <div class="row">
 <div class="column">
-<div class="div" id="div84" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
+<div class="div" id="div71" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">
 <input type="hidden" value="t1"/>
 </div>
-<div class="text">Top 84</div>
+<div class="text">Top 3</div>
 </div>
 </div>
 </div>
 <div class="mySlides fade">
-<h2>Complete : Thank you for your time! Please submit the results as a text file.</h2>
-<input type="button" width="400" height="80" align="center" onclick="myFunction()" value="Submit Result">
+<h2>Complete : Thank you for your time! Please save the results as a text file and e-mail to **wcd17@mails.tsinghua.edu.cn** or send to wechat 13051902595.</h2>
+<input type="button" width="400" height="80" align="center" onclick="myFunction()" value="Save Results">
 </div>
 </div>
 </div>
@@ -1637,7 +1621,7 @@ function drop(ev) {
 function myFunction() {
   var id;
   var result = "";
-  for (id = 1; id <= 39; id++) {
+  for (id = 0; id < 87 ; id++) {
     divName = "div" + id
     var divNode = document.getElementById(divName);
     var inputNodes = divNode.getElementsByTagName('input');
