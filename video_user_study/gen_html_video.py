@@ -128,8 +128,8 @@ def gen_html(data_dirs, out_dir, scale):
   lines.append('<body>')
   lines.append('<div class="slideshow-container">')
 
-  lines.append('<p>')
-  lines.append('User study for Video Object Removal</p>')
+  lines.append('<h1>')
+  lines.append('User study for Video Object Removal</h1>')
   lines.append('<p>Please rank the videos in terms of video object removal quality, then drag the videos to Top 1/2/3/4 slots. Click the arrows in the left/right side to  the previous/next video. When you finish all the videos, please click the <b>Save Results</b> button and save the results as a text file, then send it to <b>wcd17@mails.tsinghua.edu.cn</b> or <b>WeChat:13051902595</b> </p>')
   
   data_dir = data_dirs[0]
@@ -292,7 +292,7 @@ def gen_html(data_dirs, out_dir, scale):
   lines.append('function myFunction() {')
   lines.append('  var id;')
   lines.append('  var result = "";')
-  lines.append('  for (id = 0; id < 87 ; id++) {')
+  lines.append('  for (id = 0; id < 75 ; id++) {')
   lines.append('    divName = "div" + id')
   lines.append('    var divNode = document.getElementById(divName);')
   lines.append('    var inputNodes = divNode.getElementsByTagName('+'\'input\''+');')
