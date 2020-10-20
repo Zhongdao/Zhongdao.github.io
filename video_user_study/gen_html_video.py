@@ -151,7 +151,7 @@ def gen_html(data_dirs, out_dir, scale):
     gt_name = 'gt/' + item
 
     lines.append('<div class="column">')
-    td1 = '<video autoplay muted draggable="false" ondragstart="drag(event)" id="{}" style="width:100%" controls loop>'.format(gt_name)
+    td1 = '<video autoplay muted draggable="false" ondragstart="drag(event)" id="{}" width="480" height="360" controls loop>'.format(gt_name)
     td2 = '<source src="{}" type="video/mp4">'.format(gt_name)
     lines.append(td1)
     lines.append(td2)
@@ -170,7 +170,7 @@ def gen_html(data_dirs, out_dir, scale):
       lines.append('<div class="column">')
       td0 = '<div id="divIn{}" ondrop="drop(event)" ondragover="allowDrop(event)">'.format(divin_id)
       lines.append(td0)
-      td1 = '<video autoplay muted draggable="true" ondragstart="drag(event)" id="{}video{}" style="width:100%" controls loop>'.format(g+'/', divin_id)
+      td1 = '<video autoplay muted draggable="true" ondragstart="drag(event)" id="{}video{}" width="480" height="360" controls loop>'.format(g+'/', divin_id) #style="width:100%"
       lines.append(td1)
       td2 = '<source src="{}" type="video/mp4">'.format(video_name)
       lines.append(td2)
@@ -292,7 +292,7 @@ def gen_html(data_dirs, out_dir, scale):
   lines.append('function myFunction() {')
   lines.append('  var id;')
   lines.append('  var result = "";')
-  lines.append('  for (id = 0; id < 75 ; id++) {')
+  lines.append('  for (id = 0; id < 80 ; id++) {')
   lines.append('    divName = "div" + id')
   lines.append('    var divNode = document.getElementById(divName);')
   lines.append('    var inputNodes = divNode.getElementsByTagName('+'\'input\''+');')
