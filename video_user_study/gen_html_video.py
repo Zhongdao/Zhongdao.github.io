@@ -146,22 +146,22 @@ def gen_html(data_dirs, out_dir, scale):
     else:
       lines.append('<div class="mySlides fade">')
 
-    # show GT
-    # lines.append('<div class="row">')
-    # gt_name = 'gt/' + item
+    #show GT
+    lines.append('<div class="row">')
+    gt_name = 'gt/' + item
 
 
 
 
-    # lines.append('<div class="column">')
-    # td1 = '<video autoplay muted draggable="false" ondragstart="drag(event)" id="{}" style="width:100%" controls loop>'.format(gt_name)
-    # td2 = '<source src="{}" type="video/mp4">'.format(gt_name)
-    # lines.append(td1)
-    # lines.append(td2)
-    # lines.append('</video>')
-    # lines.append('<div class="text">Before Removal</div>')
-    # lines.append('</div>')
-    # lines.append('</div>')
+    lines.append('<div class="column" align="center">')
+    td1 = '<video autoplay muted draggable="false" ondragstart="drag(event)" id="{}" style="width:100%" align="center" controls loop >'.format(gt_name)
+    td2 = '<source src="{}" type="video/mp4">'.format(gt_name)
+    lines.append(td1)
+    lines.append(td2)
+    lines.append('</video>')
+    lines.append('<div class="text">Before Removal</div>')
+    lines.append('</div>')
+    lines.append('</div>')
 
     gourps = random.shuffle(groups)
     lines.append('<div class="row">')
@@ -170,7 +170,7 @@ def gen_html(data_dirs, out_dir, scale):
       #  lines.append('<div class="row">')
       video_name = g +'/'+item
       divin_id += 1
-      lines.append('<div class="column">')
+      lines.append('<div class="column" >')
       td0 = '<div id="divIn{}" ondrop="drop(event)" ondragover="allowDrop(event)">'.format(divin_id)
       lines.append(td0)
       td1 = '<video autoplay muted draggable="true" ondragstart="drag(event)" id="{}/{}" style="width:100%" controls loop>'.format(g, divin_id) 
