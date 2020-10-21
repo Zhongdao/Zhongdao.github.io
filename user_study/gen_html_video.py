@@ -95,7 +95,7 @@ def gen_html(data_dirs, out_dir, scale):
 
   lines.append('.column {')
   lines.append('    float: left;')
-  lines.append('    width: 32%;')
+  lines.append('    width: 25%;')
   lines.append('    padding: 5px;')
   lines.append('}')
 
@@ -147,53 +147,58 @@ def gen_html(data_dirs, out_dir, scale):
       lines.append('<div class="mySlides fade">')
 
     # show GT
-    lines.append('<div class="row">')
-    gt_name = 'gt/' + item
+    # lines.append('<div class="row">')
+    # gt_name = 'gt/' + item
 
-    lines.append('<div class="column">')
-    td1 = '<video autoplay muted draggable="false" ondragstart="drag(event)" id="{}" width="480" height="360" controls loop>'.format(gt_name)
-    td2 = '<source src="{}" type="video/mp4">'.format(gt_name)
-    lines.append(td1)
-    lines.append(td2)
-    lines.append('</video>')
-    lines.append('<div class="text">Before Removal</div>')
-    lines.append('</div>')
-    lines.append('</div>')
+
+
+
+    # lines.append('<div class="column">')
+    # td1 = '<video autoplay muted draggable="false" ondragstart="drag(event)" id="{}" style="width:100%" controls loop>'.format(gt_name)
+    # td2 = '<source src="{}" type="video/mp4">'.format(gt_name)
+    # lines.append(td1)
+    # lines.append(td2)
+    # lines.append('</video>')
+    # lines.append('<div class="text">Before Removal</div>')
+    # lines.append('</div>')
+    # lines.append('</div>')
 
     gourps = random.shuffle(groups)
-
+    lines.append('<div class="row">')
     for _, g in enumerate(groups): 
-      if _ % 2 == 0:
-        lines.append('<div class="row">')
+      #if _ % 5 == 0:
+      #  lines.append('<div class="row">')
       video_name = g +'/'+item
       divin_id += 1
       lines.append('<div class="column">')
       td0 = '<div id="divIn{}" ondrop="drop(event)" ondragover="allowDrop(event)">'.format(divin_id)
       lines.append(td0)
-      td1 = '<video autoplay muted draggable="true" ondragstart="drag(event)" id="{}video{}" width="480" height="360" controls loop>'.format(g+'/', divin_id) #style="width:100%"
+      td1 = '<video autoplay muted draggable="true" ondragstart="drag(event)" id="{}" style="width:100%" controls loop>'.format(g) 
       lines.append(td1)
       td2 = '<source src="{}" type="video/mp4">'.format(video_name)
       lines.append(td2)
       lines.append('</video>')
       lines.append('</div>')
       lines.append('</div>\n')
-      if _ % 2 == 1 or _ == len(groups)-1:
-        lines.append('</div>')
+ #     if _ % 5 == 1 or _ == len(groups)-1:
+    lines.append('</div>')
 
+
+    lines.append('<div class="row">')
     for _, g in enumerate(groups): 
-      if _ % 2 == 0:
-        lines.append('<div class="row">')
+      #if _ % 5 == 0:
+      #  lines.append('<div class="row">')
       lines.append('<div class="column">')
-      td1 = '<div class="div" id="div{}" ondrop="drop(event)" ondragover="allowDrop(event)" height="96" width="160">'.format(div_id)
+      td1 = '<div class="div" id="div{}" ondrop="drop(event)" ondragover="allowDrop(event)"  style="width:100%">'.format(div_id)
       lines.append(td1)
       lines.append('<input type="hidden" value="t1"/>')
       lines.append('</div>')
       lines.append('<div class="text">Top {}</div>'.format(str(div_id% len(groups)+ 1)))
       lines.append('</div>')
-      if _ % 2 == 1 or _ == len(groups)-1:
-        lines.append('</div>')
+      #if _ % 5 == 1 or _ == len(groups)-1:
+      #  lines.append('</div>')
       div_id += 1
-
+    lines.append('</div>')
     #g_index=0
     #for _, g in enumerate(groups): 
     #  if _ % 2 == 0:
@@ -236,6 +241,11 @@ def gen_html(data_dirs, out_dir, scale):
   lines.append('  <span class="dot" onclick="currentSlide(13)"></span>')
   lines.append('  <span class="dot" onclick="currentSlide(14)"></span>')
   lines.append(' <span class="dot" onclick="currentSlide(15)"></span>')
+  lines.append('  <span class="dot" onclick="currentSlide(16)"></span>')
+  lines.append('  <span class="dot" onclick="currentSlide(17)"></span>')
+  lines.append('  <span class="dot" onclick="currentSlide(18)"></span>')
+  lines.append('  <span class="dot" onclick="currentSlide(19)"></span>')
+
   lines.append('</div>')
 
 
@@ -279,11 +289,17 @@ def gen_html(data_dirs, out_dir, scale):
   lines.append('function drop(ev) {')
   lines.append('    ev.preventDefault();')
   lines.append('    var data = ev.dataTransfer.getData("text");')
-  lines.append('    ev.target.appendChild(document.getElementById(data));')
-      
+  lines.append('    var divNode = document.getElementById(ev.target.id);')
+  lines.append('	while(1){')
+  lines.append('		var did = divNode.className;')
+  lines.append('		if(did == "div"){')
+  lines.append('			break;}')
+  lines.append('		divNode = divNode.parentNode;')
+  lines.append('	}')
+  lines.append('    divNode.appendChild(document.getElementById(data));') 
+
   lines.append('  if (ev.target.id != "div_in")')
   lines.append('  {')
-  lines.append('    var divNode = document.getElementById(ev.target.id);')
   lines.append('    var inputNodes = divNode.getElementsByTagName('+'\'input\''+');')
   lines.append('    inputNodes[0].value = data')
   lines.append('  }')
@@ -292,11 +308,15 @@ def gen_html(data_dirs, out_dir, scale):
   lines.append('function myFunction() {')
   lines.append('  var id;')
   lines.append('  var result = "";')
-  lines.append('  for (id = 0; id < 80 ; id++) {')
-  lines.append('    divName = "div" + id')
+  lines.append('  for (id = 0; id < 72 ; id++) {')
+  lines.append('    divName = "div" + id;')
   lines.append('    var divNode = document.getElementById(divName);')
-  lines.append('    var inputNodes = divNode.getElementsByTagName('+'\'input\''+');')
-  lines.append('    result = result + divName + " " + inputNodes[0].value' + '+'+ '"\\' + 'n"')
+  lines.append('    var videoNodes = divNode.getElementsByTagName('+'\'video\''+');')
+  lines.append('    result = result + divName; ')
+  lines.append('	for (ii=0; ii < videoNodes.length; ii++){')
+  lines.append('    	result =  result + " " + videoNodes[ii].id;')
+  lines.append('    }')
+  lines.append('    result = result + '+'\'\\n\''+';')
   lines.append('  }')
   lines.append('  var file = new File([result], "video_prop_yourname.txt", {type: "text/plain;charset=utf-8"});')
   lines.append('  saveAs(file);')
