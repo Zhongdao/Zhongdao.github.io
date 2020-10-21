@@ -173,7 +173,7 @@ def gen_html(data_dirs, out_dir, scale):
       lines.append('<div class="column">')
       td0 = '<div id="divIn{}" ondrop="drop(event)" ondragover="allowDrop(event)">'.format(divin_id)
       lines.append(td0)
-      td1 = '<video autoplay muted draggable="true" ondragstart="drag(event)" id="{}" style="width:100%" controls loop>'.format(g) 
+      td1 = '<video autoplay muted draggable="true" ondragstart="drag(event)" id="{}/{}" style="width:100%" controls loop>'.format(g, divin_id) 
       lines.append(td1)
       td2 = '<source src="{}" type="video/mp4">'.format(video_name)
       lines.append(td2)
