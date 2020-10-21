@@ -131,7 +131,7 @@ def gen_html(data_dirs, out_dir, scale):
   lines.append('<h1>')
   lines.append('User study for Video Object Removal</h1>')
   lines.append('<p>Please rank the videos in terms of video object removal quality, then drag the videos to Top 1/2/3/4 slots. Click the arrows in the left/right side to  the previous/next video. When you finish all the videos, please click the <b>Save Results</b> button and save the results as a text file, then send it to <b>wcd17@mails.tsinghua.edu.cn</b> or <b>WeChat:13051902595</b> </p>')
-  
+  lines.append('<p> <b>Note:</b> It is allowed to give a tie. You can drag multiple videos into the same slot. </p>')
   data_dir = data_dirs[0]
   items = [o for o in os.listdir(data_dir)]
 
