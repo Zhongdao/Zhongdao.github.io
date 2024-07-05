@@ -1,5 +1,456 @@
 <!DOCTYPE HTML>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+   <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+
+   <style type="text/css">
+
+   /*
+CSS stylesheet is based on killwing's flavored markdown style:
+https://gist.github.com/2937864
+*/
+body{
+    margin: 0 auto;
+    font: 13px/1.231 Helvetica, Arial, sans-serif;
+    color: #444444;
+    line-height: 1;
+    max-width: 960px;
+    padding: 5px;
+}
+h1, h2, h3, h4 {
+    color: #111111;
+    font-weight: 400;
+}
+h1, h2, h3, h4, h5, p {
+    margin-bottom: 16px;
+    padding: 0;
+}
+h1 {
+    font-size: 28px;
+}
+h2 {
+    font-size: 22px;
+    margin: 20px 0 6px;
+}
+h3 {
+    font-size: 21px;
+}
+h4 {
+    font-size: 18px;
+}
+h5 {
+    font-size: 16px;
+}
+a {
+    color: #0099ff;
+    margin: 0px;
+    padding: 0;
+    vertical-align: baseline;
+}
+a:link,a:visited{
+ text-decoration:none;
+}
+a:hover{
+ text-decoration:underline;
+}
+ul, ol {
+    padding: 0;
+    margin: 0;
+}
+li {
+    line-height: 24px;
+    margin-left: 44px;
+}
+li ul, li ul {
+    margin-left: 24px;
+}
+ul, ol {
+    font-size: 14px;
+    line-height: 20px;
+    max-width: 540px;
+}
+
+p {
+    font-size: 14px;
+    line-height: 20px;
+    max-width: 1500px;
+    margin-top: 3px;
+}
+
+pre {
+    padding: 0px 4px;
+    max-width: 800px;
+    white-space: pre-wrap;
+    font-family: Consolas, Monaco, Andale Mono, monospace;
+    line-height: 1.5;
+    font-size: 13px;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+}
+code {
+    font-family: Consolas, Monaco, Andale Mono, monospace;
+    line-height: 1.5;
+    font-size: 13px;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+}
+pre code {
+    border: 0px;
+}
+aside {
+    display: block;
+    float: right;
+    width: 390px;
+}
+blockquote {
+    border-left:.5em solid #40AA53;
+    padding: 0 2em;
+    margin-left:40;
+    max-width: 1000px;
+}
+blockquote  cite {
+    font-size:14px;
+    line-height:20px;
+    color:#bfbfbf;
+}
+blockquote cite:before {
+    content: '\2014 \00A0';
+}
+
+blockquote p {  
+    color: #666;
+    max-width: 1500px;
+}
+hr {
+    height: 1px;
+    border: none;
+    border-top: 1px dashed #0066CC
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+button, input {
+  line-height: normal;
+  *overflow: visible;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+}
+/* override default chrome & firefox settings */
+input:not([type="image"]), textarea {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+label,
+input,
+select,
+textarea {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: normal;
+  margin-bottom: 18px;
+}
+input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+  margin-bottom: 0;
+}
+input[type=text],
+input[type=password],
+textarea,
+select {
+  display: inline-block;
+  width: 210px;
+  padding: 4px;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  height: 18px;
+  color: #808080;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+select, input[type=file] {
+  height: 27px;
+  line-height: 27px;
+}
+textarea {
+  height: auto;
+}
+
+/* grey out placeholders */
+:-moz-placeholder {
+  color: #bfbfbf;
+}
+::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+input[type=text],
+input[type=password],
+select,
+textarea {
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+input[type=text]:focus, input[type=password]:focus, textarea:focus {
+  outline: none;
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+/* buttons */
+button {
+  display: inline-block;
+  padding: 4px 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  background-color: #0064cd;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));
+  background-image: -moz-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -ms-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));
+  background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -o-linear-gradient(top, #049cdb, #0064cd);
+  background-image: linear-gradient(top, #049cdb, #0064cd);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  border: 1px solid #004b9a;
+  border-bottom-color: #003f81;
+  -webkit-transition: 0.1s linear all;
+  -moz-transition: 0.1s linear all;
+  transition: 0.1s linear all;
+  border-color: #0064cd #0064cd #003f81;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+button:hover {
+  color: #fff;
+  background-position: 0 -15px;
+  text-decoration: none;
+}
+button:active {
+  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+/* table  */
+table {
+    border-spacing: 0;
+    border: 1px solid #ccc;
+}
+
+td, th{
+    border: 0px solid #ccc;
+    padding: 5px;
+}
+
+.spacer {
+    display: block;
+    height: 8px;
+}
+
+/* code syntax highlight.
+Documentation: http://www.mdcharm.com/documentation/code_syntax_highlighting.html#custom_your_own
+ */
+pre .literal,
+pre .comment,
+pre .template_comment,
+pre .diff .header,
+pre .javadoc {
+    color: #008000;
+}
+
+pre .keyword,
+pre .css .rule .keyword,
+pre .winutils,
+pre .javascript .title,
+pre .nginx .title,
+pre .subst,
+pre .request,
+pre .status {
+    color: #0000FF;
+    font-weight: bold
+}
+
+pre .number,
+pre .hexcolor,
+pre .python .decorator,
+pre .ruby .constant {
+    color: #0000FF;
+}
+
+pre .string,
+pre .tag .value,
+pre .phpdoc,
+pre .tex .formula {
+    color: #D14
+}
+
+pre .title,
+pre .id {
+    color: #900;
+    font-weight: bold
+}
+
+pre .javascript .title,
+pre .lisp .title,
+pre .clojure .title,
+pre .subst {
+    font-weight: normal
+}
+
+pre .class .title,
+pre .haskell .type,
+pre .vhdl .literal,
+pre .tex .command {
+    color: #458;
+    font-weight: bold
+}
+
+pre .tag,
+pre .tag .title,
+pre .rules .property,
+pre .django .tag .keyword {
+    color: #000080;
+    font-weight: normal
+}
+
+pre .attribute,
+pre .variable,
+pre .lisp .body {
+    color: #008080
+}
+
+pre .regexp {
+    color: #009926
+}
+
+pre .class {
+    color: #458;
+    font-weight: bold
+}
+
+pre .symbol,
+pre .ruby .symbol .string,
+pre .lisp .keyword,
+pre .tex .special,
+pre .prompt {
+    color: #990073
+}
+
+pre .built_in,
+pre .lisp .title,
+pre .clojure .built_in {
+    color: #0086b3
+}
+
+pre .preprocessor,
+pre .pi,
+pre .doctype,
+pre .shebang,
+pre .cdata {
+    color: #999;
+    font-weight: bold
+}
+
+pre .deletion {
+    background: #fdd
+}
+
+pre .addition {
+    background: #dfd
+}
+
+pre .diff .change {
+    background: #0086b3
+}
+
+pre .chunk {
+    color: #aaa
+}
+
+pre .markdown .header {
+    color: #800;
+    font-weight: bold;
+}
+
+pre .markdown .blockquote {
+    color: #888;
+}
+
+pre .markdown .link_label {
+    color: #88F;
+}
+
+pre .markdown .strong {
+    font-weight: bold;
+}
+
+pre .markdown .emphasis {
+    font-style: italic;
+}
+
+   </style>
+
+   
+
+   
+
+</head>
 
   <title>Zhongdao Wang</title>
   
@@ -61,69 +512,102 @@
             <tr>
             <td style="padding:20px;width:100%;vertical-align:middle">
               <heading>Selected Publications</heading>
-          <p> 
-          For the latest full list please check <a href="https://scholar.google.com/citations?user=VkKYpHIAAAAJ&hl=en">here</a>. 
-          </p>
-          <br>
+            </td>
+          </tr>
+          <span class="spacer"></span>
+      </tbody></table>
+        
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+          <h3 id="perception"> Generative AI </h3>
+            </td>
+          </tr>
+      </tbody></table>
+
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:30%;vertical-align:middle">
+                <img src="images/pixart-alpha.png" style="width:auto; height:auto; max-width:100%;">
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://pixart-alpha.github.io/">
+                <papertitle>PIXART-α: Fast Training of Diffusion Transformer for Photorealistic Text-to-Image Synthesis </papertitle>
+              </a>
+              <span class="spacer"></span>
+               <a href="https://lawrence-cj.github.io/">Junsong Chen</a>,
+               <a href="https://lovesykun.cn/about.html">Jincheng Yu</a>,
+               <a href="https://chongjiange.github.io/">Chongjian Ge</a>,
+               <a href="https://scholar.google.com/citations?user=hqDyTg8AAAAJ">Lewei Yao</a>,
+               <a href="https://xieenze.github.io/">Enze Xie</a>,
+               <a href="https://yuewuhkust.github.io/">Yue Wu</a>,
+               <strong>Zhongdao Wang</strong>,
+               <a href="https://www.cse.ust.hk/~jamesk/">James Kwok</a>,
+               <a href="http://luoping.me/">Ping Luo</a>
+               <a href="https://scholar.google.com/citations?user=D3nE0agAAAAJ&hl=en">Huchuan Lu</a>,
+               <a href="https://scholar.google.com/citations?user=XboZC1AAAAAJ&hl=en">Zhenguo Li</a>,
+              <span class="spacer"></span>
+              <em>ICLR</em>, 2024 &nbsp <font color="red">(Spotlight)</font>
+              
+              <span class="spacer"></span>
+              <a href="https://pixart-alpha.github.io">project page</a> / 
+              <a href="https://arxiv.org/abs/2310.00426">arXiv</a> /
+              <a href="https://huggingface.co/spaces/PixArt-alpha/PixArt-alpha">HuggingFace Demo</a> / 
+              <a href="https://github.com/PixArt-alpha/PixArt-alpha">code</a>  <a class="github-button" href="https://github.com/PixArt-alpha/PixArt-alpha" data-icon="octicon-star" data-show-count="true" aria-label="" target="_blank">star</a> 
+              
+              <span class="spacer"></span>
+              <p></p>
+              <p> PixArt-alpha is the first DiT-based T2I diffusion model whose image generation quality is competitive with SoTA image generators (e.g., Imagen, SDXL, and even Midjourney), reaching near-commercial application standards. With efficient designs, our training only takes 10.8% of Stable Diffusion v1.5's cost in terms of GPU days. Many recent Text-to-Video models such like Latte, Open-Sora, Open-Sora-Plan are inspired by or built upon PixArt-alpha.</p>
+            </td>
+          </tr>  
+        </tbody></table>
+
+
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:30%;vertical-align:middle">
+                <img src="images/pixart-sigma.png" style="width:auto; height:auto; max-width:100%;">
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://pixart-alpha.github.io/PixArt-sigma-project/">
+                <papertitle>PixArt-Σ: Weak-to-Strong Training of Diffusion Transformer for 4K Text-to-Image Generation </papertitle>
+              </a>
+              <span class="spacer"></span>
+               <a href="https://lawrence-cj.github.io/">Junsong Chen</a>,
+               <a href="https://chongjiange.github.io/">Chongjian Ge</a>,
+               <a href="https://xieenze.github.io/">Enze Xie</a>,
+               <a href="https://yuewuhkust.github.io/">Yue Wu</a>,
+               <a href="https://scholar.google.com/citations?user=hqDyTg8AAAAJ">Lewei Yao</a>,
+               <a href="">Xiaozhe Ren</a>,
+               <strong>Zhongdao Wang</strong>,
+               <a href="http://luoping.me/">Ping Luo</a>
+               <a href="https://scholar.google.com/citations?user=D3nE0agAAAAJ&hl=en">Huchuan Lu</a>,
+               <a href="https://scholar.google.com/citations?user=XboZC1AAAAAJ&hl=en">Zhenguo Li</a>,
+              <span class="spacer"></span>
+              <em>ECCV</em>, 2024 
+              
+              <span class="spacer"></span>
+              <a href="https://pixart-alpha.github.io/PixArt-sigma-project">project page</a> / 
+              <a href="https://arxiv.org/abs/2403.04692">arXiv</a> /
+              <a href="https://huggingface.co/spaces/PixArt-alpha/PixArt-Sigma">HuggingFace Demo</a> / 
+              <a href="https://github.com/PixArt-alpha/PixArt-sigma">code</a>  <a class="github-button" href="https://github.com/PixArt-alpha/PixArt-sigma" data-icon="octicon-star" data-show-count="true" aria-label="" target="_blank">star</a> 
+              
+              <span class="spacer"></span>
+              <p></p>
+              <p> An update version of PixArt-alpha that is capable of generating ultra-high resolution (up to 4K) images in super realistic quality. </p>
+            </td>
+          </tr>  
+        </tbody></table>
+
+
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle">
           <h3 id="perception"> Perception (object detection/segmentation/tracking) </h3>
             </td>
           </tr>
       </tbody></table>
-          <!--
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/miex_.png" style="width:auto; height:auto; max-width:100%;">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2112.01730">
-                <papertitle>How to Synthesize a Large-Scale and Trainable Micro-Expression Dataset?</papertitle>
-              </a>
-              <br>
-              Yuchi Liu,
-                <strong>Zhongdao Wang</strong>,
-              <a href="http://users.cecs.anu.edu.au/~Tom.Gedeon/">Tom Gedeon</a>,
-              <a href="http://www.liangzheng.com.cn/">Liang Zheng</a>,
-              <br>
-              <em>ECCV</em>, 2022
-              
-              <br>
-              <a href="https://arxiv.org/abs/2112.01730">arXiv</a> /
-              <a href="https://github.com/liuyvchi/MiE-X">code</a>  <a class="github-button" href="https://github.com/liuyvchi/MiE-X" data-icon="octicon-star" data-show-count="true" aria-label="Star Zhongdao/UniTrack on GitHub" target="_blank">star</a>
-              
-              <br>
-              <p></p>
-              <p> A large-scale, synthetic dataset for micro facial expression recognition.</p>
-            </td>
-          </tr>  
-          </tbody></table>
-
-       
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/prob_reid.png" style="width:auto; height:auto; max-width:100%;">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org">
-                <papertitle>Reliability-Aware Prediction via Uncertainty Learning for Person Image Retrieval</papertitle>
-              </a>
-              <br>
-              Zhaopeng Dou,
-              <strong>Zhongdao Wang</strong>,
-              Weihua Chen,
-              <a href="https://scholar.google.com/citations?user=aYLh7fsAAAAJ&hl=en&oi=ao">Ya-Li Li</a>,
-              <a href="https://scholar.google.com/citations?user=RgzLZZsAAAAJ&hl=en&oi=ao">Shengjin Wang</a>,
-              <br>
-              <em>ECCV</em>, 2022
-              
-              <br>
-              <p></p>
-              <p> Joint modeling of data and model uncertainty improves robustness and reliability of Re-ID representations.</p>
-            </td>
-          </tr>  
-        </tbody></table>
-          -->
           
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
@@ -134,7 +618,7 @@
               <a href="https://chongjiange.github.io/metabev.html">
                 <papertitle>MetaBEV: Solving Sensor Failures for BEV Detection and Map Segmentation</papertitle>
               </a>
-              <br>
+              <span class="spacer"></span>
                <a href="https://chongjiange.github.io/">Chongjian Ge</a>,
                <a href="https://scholar.google.com/citations?user=p4zxPP8AAAAJ&hl=zh-CN">Junsong Chen</a>,
                <a href="https://xieenze.github.io/">Enze Xie</a>,
@@ -143,16 +627,16 @@
                <a href="https://scholar.google.com/citations?user=D3nE0agAAAAJ&hl=en">Huchuan Lu</a>,
                <a href="https://scholar.google.com/citations?user=XboZC1AAAAAJ&hl=en">Zhenguo Li</a>,
                <a href="http://luoping.me/">Ping Luo</a>
-              <br>
+              <span class="spacer"></span>
               <em>ICCV</em>, 2023
               
-              <br>
+              <span class="spacer"></span>
               <a href="https://chongjiange.github.io/metabev.html">project page</a> / 
               <a href="https://arxiv.org/abs/2304.09801">arXiv</a> /
               <a href="https://www.youtube.com/watch?v=TiEQpYq77Xo&list=PLB9_L58NpyEWcJhnX-a09CRXp-2kNEojY&index=2">Youtube</a> / 
               <a href="https://github.com/ChongjianGE/MetaBEV">code</a>  <a class="github-button" href="https://github.com/ChongjianGE/MetaBEV" data-icon="octicon-star" data-show-count="true" aria-label="" target="_blank">star</a> 
               
-              <br>
+              <span class="spacer"></span>
               <p></p>
               <p> MetaBEV is a 3D Bird-Eye's View (BEV) perception model that is robust to sensor missing/failure, supporting both single modality mode (camera/lidar) and multi-modal fusion mode with strong performance. </p>
             </td>
@@ -168,7 +652,7 @@
               <a href="https://zhongdao.github.io/UniTrack">
                 <papertitle>Do Different Tracking Tasks Require Different Appearance Models?</papertitle>
               </a>
-              <br>
+              <span class="spacer"></span>
                 <strong>Zhongdao Wang</strong>,
               <a href="https://hszhao.github.io">Hengshuang Zhao</a>,
               <a href="https://scholar.google.com/citations?user=aYLh7fsAAAAJ&hl=en&oi=ao">Ya-Li Li</a>,
@@ -176,15 +660,15 @@
               <a href="https://www.robots.ox.ac.uk/~phst/">Philip H.S. Torr</a>,
 
               <a href="https://www.robots.ox.ac.uk/~luca">Luca Bertinetto</a>
-              <br>
+              <span class="spacer"></span>
               <em>NeurIPS</em>, 2021
               
-              <br>
+              <span class="spacer"></span>
               <a href="https://zhongdao.github.io/UniTrack">project page</a> / 
               <a href="https://arxiv.org/pdf/2107.02156.pdf">arXiv</a> /
               <a href="https://github.com/Zhongdao/UniTrack">code</a>  <a class="github-button" href="https://github.com/Zhongdao/UniTrack" data-icon="octicon-star" data-show-count="true" aria-label="Star Zhongdao/UniTrack on GitHub" target="_blank">star</a>
               
-              <br>
+              <span class="spacer"></span>
               <p></p>
               <p> Object tracking has been fragmented into multiple different experimental setups due to different use cases and benchmarks. We investigate if it is possible to address the various setups with a single, shared apperance model. </p>
             </td>
@@ -200,18 +684,18 @@
               <a href="https://arxiv.org/pdf/1909.12605v2.pdf">
                 <papertitle>Towards Real-time Multi-Object Tracking</papertitle>
               </a>
-              <br>
+              <span class="spacer"></span>
               <strong>Zhongdao Wang</strong>,
               <a href="http://www.liangzheng.com.cn/">Liang Zheng</a>,
               Yixuan Liu,
               Yali Li,
               Shengjin Wang
-              <br>
+              <span class="spacer"></span>
               <em>ECCV</em>, 2020
-              <br>
+              <span class="spacer"></span>
               <a href="https://arxiv.org/pdf/1909.12605v2.pdf"> arXiv</a> / 
               <a href="https://github.com/Zhongdao/Towards-Realtime-MOT">code</a>  <a class="github-button" href="https://github.com/Zhongdao/Towards-Realtime-MOT" data-icon="octicon-star" data-show-count="true" aria-label="Star Zhongdao/Towards-Realtime-MOT on GitHub" target="_blank">star</a>
-              <br>
+              <span class="spacer"></span>
               <p></p>
               <p>By incorporating the appearance embedding model into the detector, we introduce JDE, the first open-source real-time multiple object trackor with a running speed of <strong>22 ~ 38</strong> FPS. This speed takes all the steps into account, including detection, appearance embedding extraction and association. Code is released! If you are looking for an easy-to-use and fast pedestrian detector/tracker, JDE is a good option!</p>
             </td>
@@ -219,138 +703,6 @@
         </tbody></table>
 
         
-        <!--
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/dsoftmax.jpg" style="width:auto; height:auto; max-width:100%;">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/pdf/1908.01281">
-                <papertitle>Softmax Dissection: Towards Understanding Intra-and Inter-class Objective for Embedding Learning</papertitle>
-              </a>
-              <br>
-              Lanqing He*,
-              <strong>Zhongdao Wang*</strong>,
-              Yali Li, 
-              Shengjin Wang (* indicates equal contribution)
-              <br>
-              <em>AAAI</em>, 2020 &nbsp <font color="red"><strong>(Oral Presentation)</strong></font>
-              <br>
-              <a href="https://arxiv.org/pdf/1908.01281">arXiv</a>
-              <br>
-              <p></p>
-              <p>Investigation on intra- and inter-class objectives of the softmax cross-entropy loss function, and a new loss that dissects the two parts for accelerating massive classification.</p>
-            </td>
-          </tr>
-        </tbody></table>
-
-        
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/gcn.jpg" style="width:auto; height:auto; max-width:100%;">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="http://openaccess.thecvf.com/content_CVPR_2019/papers/Wang_Linkage_Based_Face_Clustering_via_Graph_Convolution_Network_CVPR_2019_paper.pdf">
-                <papertitle>Linkage based face clustering via graph convolution network</papertitle>
-              </a>
-              <br>
-              <strong>Zhongdao Wang</strong>,
-              <a href="http://www.liangzheng.com.cn/">Liang Zheng</a>,
-              Yali Li,
-              Shengjin Wang 
-              <br>
-              <em>CVPR</em>, 2019 
-              <br>
-              <a href="http://openaccess.thecvf.com/content_CVPR_2019/papers/Wang_Linkage_Based_Face_Clustering_via_Graph_Convolution_Network_CVPR_2019_paper.pdf"> paper</a> / 
-              <a href="https://github.com/Zhongdao/gcn_clustering">code</a>  <a class="github-button" href="https://github.com/Zhongdao/gcn_clustering" data-icon="octicon-star" data-show-count="true" aria-label="Star Zhongdao/gcn_clustering on GitHub" target="_blank">star</a>
-              <br>
-              <p></p>
-              <p>A supervised solution to the face clustering task using graph convolutional networks.</p>
-            </td>
-          </tr>
-        </tbody></table>
-        
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/iccv17.png" style="width:auto; height:auto; max-width:100%;">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Wang_Orientation_Invariant_Feature_ICCV_2017_paper.pdf">
-                <papertitle>Orientation invariant feature embedding and spatial temporal regularization for vehicle re-identification</papertitle>
-              </a>
-              <br>
-              <strong>Zhongdao Wang*</strong>,
-              <a href="http://hal9000.space/">Luming Tang*</a>,
-              <a href="https://xh-liu.github.io/">Xihui Liu</a>,
-              <a href="https://scholar.google.com/citations?user=J3kgC1QAAAAJ&hl=en-US">Zhuliang Yao</a>,
-              <a href="https://scholar.google.com/citations?user=afbbNmwAAAAJ&hl=en-US">Shuai Yi</a>,
-              <a href="https://scholar.google.com/citations?user=VU5ObUwAAAAJ&hl=en-US&oi=ao">Jing shao</a>,
-              <a href="https://scholar.google.com/citations?user=rEYarG0AAAAJ&hl=en-US&oi=ao">Junjie Yan</a>,
-              <a href="https://scholar.google.com/citations?hl=en-US&user=RgzLZZsAAAAJ">Shengjin Wang</a>,
-              <a href="http://www.ee.cuhk.edu.hk/~hsli/">Hongsheng Li</a>,
-              <a href="https://scholar.google.com/citations?user=-B5JgjsAAAAJ&hl=en-US">Xiaogang Wang</a> 
-              (* indicates equal contribution)
-              <br>
-              <em>ICCV</em>, 2017
-              <br>
-              <a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Wang_Orientation_Invariant_Feature_ICCV_2017_paper.pdf"> paper </a> / 
-              <a href="https://github.com/Zhongdao/VehicleReIDKeyPointData">Key point annotation for Veri-776 dataset</a> <a class="github-button" href="https://github.com/Zhongdao/VehicleReIDKeyPointData" data-icon="octicon-star" data-show-count="true" aria-label="Star Zhongdao/VehicleReIDKeyPointData on GitHub" target="_blank">star</a>
-              <br>
-              <p></p>
-              <p> An orientation-invariant solution to the vehicle re-identification problem. </p>
-            </td>
-          </tr>
-        </tbody>
-
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/MTMCT.png" style="width:auto; height:auto; max-width:100%;">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://ieeexplore.ieee.org/document/9646485">
-                <papertitle>Adapting Affinity in Association Improves Multi-Target Multi-Camera Tracking</papertitle>
-              </a>
-              <br>
-              <a href="https://hou-yz.github.io/">Yunzhong Hou</a>,
-              <strong>Zhongdao Wang</strong>,
-              <a href="https://scholar.google.com/citations?hl=en-US&user=RgzLZZsAAAAJ">Shengjin Wang</a>,
-              <a href="http://www.liangzheng.com.cn/">Liang Zheng</a>
-              <br>
-              <em>IEEE Transactions on Image Processing (TIP)</em>, 2021
-              <br>
-              <p></p>
-              <p> Model the multi-target multi-camera tracking (MTMCT) problem from a perspective of local matching. </p>
-            </td>
-          </tr>
-
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/evt.jpg" style="width:auto; height:auto; max-width:100%;">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://ieeexplore.ieee.org/abstract/document/8977386">
-                <papertitle>Node-Adaptive Multi-Graph Fusion Using Extreme Value Theory</papertitle>
-              </a>
-              <br>
-              Jingwei Zhang,
-              <strong>Zhongdao Wang</strong>,
-              Yali Li,
-              <a href="https://scholar.google.com/citations?hl=en-US&user=RgzLZZsAAAAJ">Shengjin Wang</a>,
-              <br>
-              <em>IEEE Singnal Processing Letters (SPL)</em>, 2020
-              <br>
-              <p></p>
-              <p> Multi-graph fusion using extreme value theory for multi-view clustering. </p>
-            </td>
-          </tr>
-        </tbody></table>
-        -->
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
@@ -370,13 +722,13 @@
                 <papertitle>[CycAs v3] Identity-Seeking Self-Supervised Representation Learning for Generalizable Person Re-identification</papertitle>
               </a>
 
-              <br>
+              <span class="spacer"></span>
               Zhaopeng Dou,
               <strong>Zhongdao Wang</strong>,
               Yali Li,
               Shengjin Wang
-              <br>
-              <em>ICCV</em>, 2023 &nbsp <font color="red">(Oral)</font
+              <span class="spacer"></span>
+              <em>ICCV</em>, 2023 &nbsp <font color="red">(Oral)</font>
               <p></p>
               <p> A new self-supervised learning objective further improves upon CycAs v2, refreshing the zero-shot transfer performance on Market-1501 to 87.1% rank-1 accuracy, already on par with supervised models trained with in-domain data.</p>
             </td>
@@ -392,11 +744,11 @@
               <a href="https://arxiv.org/abs/2007.07577">
                 <papertitle>[CycAs v1] CycAs: Self-supervised Cycle Association for Learning Re-identifiable Descriptions</papertitle>
               </a>
-              <br>
+              <span class="spacer"></span>
               <a href="https://arxiv.org/abs/2211.03663">
                 <papertitle>[CycAs v2] Generalizable Re-Identification from Videos with Cycle Association</papertitle>
               </a>
-              <br>
+              <span class="spacer"></span>
               <strong>Zhongdao Wang</strong>,
               Jingwei Zhang,
               <a href="http://www.liangzheng.com.cn/">Liang Zheng</a>,
@@ -404,7 +756,7 @@
               Yifan Sun,
               Yali Li,
               Shengjin Wang
-              <br>
+              <span class="spacer"></span>
               <em>[v1] ECCV</em>, 2020; <em>[v2] arXiv</em>, 2021 
               <p> CycAs is the fisrt self-supervised method for learning re-identifiable features. We use videos as input, the supervision signal is cycle consistency emerging from instance association in a forward-backward cycle. In CycAs v1, we train and show promising results on (mostly small) canonical datasets; In CycAs v2, we collect a large amount of video data and train a much more generalizable model with improved building blocks. The zero-shot transfer ablility is suprisingly good, with a rank-1 accuracy of 82.2% on Market-1501.</p>
             </td>
@@ -421,13 +773,13 @@
               <a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/dc709714c52b35f2f34aca2a92b06bc8-Paper-Conference.pdf">
                 <papertitle>Self-Supervised Learning via Maximum Entropy Coding</papertitle>
               </a>
-              <br>
+              <span class="spacer"></span>
               Xin Liu,
               <strong>Zhongdao Wang</strong>,
               Yali Li,
               Shengjin Wang
 
-              <br>
+              <span class="spacer"></span>
               <em>NeurIPS</em>, 2022 &nbsp <font color="red">(Spotlight)</font>
               <p></p>
               <p>Self-supervised learning via Maximum Entropy Coding improves generalization ability of the learned representation on a variaty of down-stream tasks.</p>
@@ -446,7 +798,7 @@
               <a href="https://arxiv.org/pdf/2002.10857.pdf">
                 <papertitle>Circle Loss: A Unified Perspective of Pair Similarity Optimization</papertitle>
               </a>
-              <br>
+              <span class="spacer"></span>
               <a href="https://scholar.google.com/citations?user=uUZEL7UAAAAJ&hl=en-US">Yifan Sun</a>,
               <a href="https://github.com/wandering007">Changmao Cheng</a>,
               Yuhan Zhang, 
@@ -454,12 +806,11 @@
               <a href="http://www.liangzheng.com.cn/">Liang Zheng</a>,
               <strong>Zhongdao Wang</strong>,
               <a href="https://yichenwei.github.io/">Yichen Wei</a>,
-
-              <br>
+              <span class="spacer"></span>
               <em>CVPR</em>, 2020 &nbsp <font color="red">(Oral)</font>
-              <br>
+              <span class="spacer"></span>
               <a href="https://arxiv.org/pdf/2002.10857.pdf"> arXiv</a>
-              <br>
+              <span class="spacer"></span>
               <p></p>
               <p>A unified perspective for proxy-based and pair-based metric learning.</p>
             </td>
@@ -467,9 +818,83 @@
         </tbody></table>
 
       <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <heading>Full List</heading>
+            </td>
+          </tr>
+          <span class="spacer"></span>
+      </tbody></table>
+
+
+      <blockquote>
+		<p><a href="https://arxiv.org/abs/2403.04692"> PixArt-Σ: Weak-to-Strong Training of Diffusion Transformer for 4K Text-to-Image Generation
+			</a> 
+		<br />
+		Junsong Chen, Chongjian Ge, Enze Xie, Yue Wu, Lewei Yao, Xiaozhe Ren, <strong>Zhongdao Wang</strong>, Ping Luo, Huchuan Lu, Zhenguo Li <br />
+		ECCV, 2024.
+	  </blockquote> 
+
+      <blockquote>
+		<p><a href=""> Space-Correlated Transformer: Jointly Explore the Matching and Motion Clues in 3D Single Object Tracking
+			</a> 
+		<br />
+		Fei Xie, Jiahao Nie, <strong>Zhongdao Wang</strong>, Zhiwei He, Chao Ma <br />
+		ECCV, 2024.
+	  </blockquote> 
+
+      <blockquote>
+		<p><a href="https://arxiv.org/abs/2404.15014"> OccGen: Generative Multi-modal 3D Occupancy Prediction for Autonomous Driving
+			</a> 
+		<br />
+		Guoqing Wang, <strong>Zhongdao Wang</strong>, Pin Tang, Jilai Zheng, Xiangxuan Ren, Bailan Feng, Chao Ma <br />
+		ECCV, 2024.
+	  </blockquote> 
+      
+	  <blockquote>
+		<p><a href=""> VEON: Vocabulary-Enhanced Occupancy Prediction
+			</a> 
+		<br />
+		 Jilai Zheng, Pin Tang, <strong>Zhongdao Wang</strong>, Guoqing Wang,  Xiangxuan Ren, Bailan Feng, Chao Ma <br />
+		ECCV, 2024.
+	  </blockquote> 
+	  
+      <blockquote>
+		<p><a href=""> LogoSticker: Inserting Logos into Diffusion Models for Customized Generation
+			</a> 
+		<br />
+		 Mingkang Zhu, Xi Chen,  <strong>Zhongdao Wang</strong>, Hengshuang Zhao, Jiaya Jia <br />
+		ECCV, 2024.
+	  </blockquote> 
+      
+      <blockquote>
+		<p><a href=""> Segment, Lift and Fit: Automatic 3D Shape Labeling from 2D Prompts
+			</a> 
+		<br />
+		 Jianhao Li, Tianyu Sun,  <strong>Zhongdao Wang</strong>, Enze Xie, Bailan Feng, Hongbo Zhang, Ze Yuan, Ke Xu, Jiaheng Liu, Ping Luo <br />
+		ECCV, 2024.
+	  </blockquote> 
+      
+	<blockquote>
+		<p><a href=""> SparseOcc: Rethinking Sparse Latent Representation for Vision-Based Semantic Occupancy Prediction
+			</a> 
+		<br />
+		 Pin Tang, <strong>Zhongdao Wang</strong>, Guoqing Wang, Jilai Zheng, Xiangxuan Ren, Bailan Feng, Chao Ma  <br />
+		ECCV, 2024.
+	  </blockquote> 
+
+	<blockquote>
+		<p><a href=""> DiffusionTrack: Point Set Diffusion Model for Visual Object Tracking
+			</a> 
+		<br />
+		 Fei Xie, <strong>Zhongdao Wang</strong>, Chao Ma  <br />
+		ECCV, 2024.
+	  </blockquote> 
+	 
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
             <td style="padding:0px">
-              <br>
+              <span class="spacer"></span>
               <p style="text-align:center;font-size:small;">
                 Design and source code modified based on  <a href="https://jonbarron.info/">Jon Barron's website</a>.
               </p>
@@ -479,6 +904,11 @@
       
       </td>
     </tr>
+
+
+
+
+
   </table>
 </body>
 
